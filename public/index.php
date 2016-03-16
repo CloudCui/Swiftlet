@@ -12,7 +12,7 @@ use \Swiftlet\Factories\View as ViewFactory;
 try {
 	$view = ViewFactory::build();
 
-	$app = AppFactory::build($view, 'HelloWorld');
+	$app = AppFactory::build($view, 'Rss');
 
 	// Convert errors to ErrorException instances
 	set_error_handler(array($app, 'error'), E_ALL | E_STRICT);
@@ -21,7 +21,7 @@ try {
 
 	date_default_timezone_set('UTC');
 
-	$app->loadListeners(); // You may comment this out if you're not using listeners
+	// $app->loadListeners(); // You may comment this out if you're not using listeners
 
 	$app->dispatchController();
 
